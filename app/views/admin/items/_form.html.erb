@@ -1,0 +1,9 @@
+<%= semantic_form_for [:admin, @item], html: {multipart: true} do |f|%>
+	<%= f.inputs do %>
+		<%= f.input :group, as: :select %>
+		<%= f.input :name %>
+		<%= f.input :photo, :as => :file%>
+		<%= f.input :friends, :as => :string, input_html: {data: {pre: @item.friends.to_json}} %>
+  <% end %>
+	<%= f.submit %>
+<% end %>

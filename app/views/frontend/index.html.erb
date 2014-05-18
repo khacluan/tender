@@ -1,0 +1,16 @@
+<ul class="groups">
+<% @groups.each do |group| %>
+	<li>
+		
+		<ul class="items">
+			<li class="label"><%= group.name %></li>
+			<% group.items.each do |item| %>
+				<li class="item-qtip" mesg="<%= item.name %>" data-item-id="<%= item.id %>" data-related-items="<%= item.friends.pluck(:id).flatten.uniq | item.inverse_friends.pluck(:id).flatten.uniq %>" >
+					<%= image_tag item.photo.url(:thumb), alt: item.name, data: {id: item.id} %>
+					<div class="overlay"></div>
+				</li>
+ 			<% end %>
+		</ul>
+	</li>
+<% end %>
+</ul>

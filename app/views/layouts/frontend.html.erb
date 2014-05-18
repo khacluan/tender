@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tender Description Generator</title>
+  <%= stylesheet_link_tag    "frontend", :media => "all" %>
+  <%= javascript_include_tag "frontend" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<%= render "shared/header" %>
+	<div class="container">
+		<%= yield %>
+	</div>
+	<%= render "shared/footer" %>
+</body>
+</html>
